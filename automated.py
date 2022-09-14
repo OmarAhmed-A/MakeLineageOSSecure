@@ -1,6 +1,6 @@
 import os
 
-
+type = os.name
 PathToAdb = "adb" #edit this if you dont have platform tools added to path
 # pull file
 os.system("{} root".format(PathToAdb))
@@ -24,6 +24,9 @@ os.system("{} push ./build.prop /system/build.prop".format(PathToAdb))
 os.system("{} shell reboot".format(PathToAdb))
 
 # clean up
-os.system("rm ./build.prop")
+if type == 'posix':
+    os.system("rm ./build.prop")
+else:
+    os.system("del build.prop")
 
 print("You're all done!!")
