@@ -3,8 +3,8 @@ import os
 
 PathToAdb = "adb" #edit this if you dont have platform tools added to path
 # pull file
-os.system("%s root", PathToAdb)
-os.system("%s pull /system/build.prop .", PathToAdb)
+os.system("{} root".format(PathToAdb))
+os.system("{} pull /system/build.prop .".format(PathToAdb))
 
 # edit file
 with open('./build.prop', 'r') as file:
@@ -19,8 +19,9 @@ with open('./build.prop', 'w') as file:
 
 file.close()
 
-os.system("%s push ./build.prop /system/build.prop", PathToAdb)
-os.system("%s shell reboot", PathToAdb)
+os.system("{} remount".format(PathToAdb))
+os.system("{} push ./build.prop /system/build.prop".format(PathToAdb))
+os.system("{} shell reboot".format(PathToAdb))
 
 # clean up
 os.system("rm ./build.prop")
