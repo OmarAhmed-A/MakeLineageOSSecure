@@ -5,8 +5,8 @@ bank apps / secure apps usually show an error saying device not secure or device
 
 ## dependencies
 
-- adb
-- python3
+- [adb](https://www.xda-developers.com/install-adb-windows-macos-linux/)
+- [python3](https://www.python.org/downloads/)
 
 ## first get the phone ready
 
