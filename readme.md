@@ -20,7 +20,7 @@ wheather you choose the automated way or you want to do it yourself you need to 
 
 1- clone repo
 
-2- check the PathToAdb variable in the script and make sure it points to your adb executable
+2- check the PathToAdb variable in the script and make sure it points to your adb executable if adb isnt added to path on your machine.
 
 3- run the python script `automated.py`
 

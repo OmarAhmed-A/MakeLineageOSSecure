@@ -1,7 +1,7 @@
 import os
 
 
-PathToAdb = "%LOCALAPPDATA%\Android\sdk\platform-tools"
+PathToAdb = "adb" #edit this if you dont have platform tools added to path
 # pull file
 os.system("%s root", PathToAdb)
 os.system("%s pull /system/build.prop .", PathToAdb)
