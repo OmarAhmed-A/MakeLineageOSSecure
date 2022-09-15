@@ -1,10 +1,11 @@
+import subprocess
 import os
 
 type = os.name
 PathToAdb = "adb" #edit this if you dont have platform tools added to path
 # pull file
-os.system("{} root".format(PathToAdb))
-os.system("{} pull /system/build.prop .".format(PathToAdb))
+subprocess.run("%s root" % PathToAdb, shell=True)
+subprocess.run("%s pull /system/build.prop ." % PathToAdb, shell=True)
 
 # edit file
 with open('./build.prop', 'r') as file:
@@ -19,14 +20,14 @@ with open('./build.prop', 'w') as file:
 
 file.close()
 
-os.system("{} remount".format(PathToAdb))
-os.system("{} push ./build.prop /system/build.prop".format(PathToAdb))
-os.system("{} shell reboot".format(PathToAdb))
+subprocess.run("%s remount" % PathToAdb, shell=True)
+subprocess.run("%s push ./build.prop /system/build.prop" % PathToAdb, shell=True)
+subprocess.run("%s shell reboot" % PathToAdb, shell=True)
 
 # clean up
 if type == 'posix':
-    os.system("rm ./build.prop")
+    subprocess.run("rm ./build.prop", shell=True)
 else:
-    os.system("del build.prop")
+    subprocess.run("del build.prop", shell=True)
 
 print("You're all done!!")
