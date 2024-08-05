@@ -1,5 +1,6 @@
+# This has not been updated in two years and according to a recent issue would cause a bootloop. do not use until this message is updated.
 
-# make bank apps work on lineageOs
+## make bank apps work on lineageOs
 
 bank apps / secure apps usually show an error saying device not secure or device rooted. this is because lineageOs has a small configuration error. this app will fix that.
 
